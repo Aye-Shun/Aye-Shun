@@ -15,7 +15,7 @@ import urllib.request
 from xml.sax.saxutils import escape
 
 OUT = os.environ.get("CARD_OUT", "wakatime.svg")
-API = "https://wakatime.com/api/v1/users/current/stats/last_7_days"
+API = "https://wakatime.com/api/v1/users/current/summaries?range=Last%207%20Days"
 SHOWN = 6
 
 # GitHub dark palette, same as the other cards
@@ -34,21 +34,42 @@ LANG_COLORS = {
 FALLBACK = ["#58a6ff", "#3fb950", "#d2a8ff", "#ffa657", "#ff7b72", "#39c5cf"]
 
 
+def human(seconds):
+    """WakaTime-style durations: '5 hrs 59 mins', '47 mins', '30 secs'."""
+    seconds = int(seconds)
+    if seconds < 60:
+        return f"{seconds} secs"
+    hours, mins = divmod(seconds // 60, 60)
+    parts = [f"{hours} hr{'s' if hours != 1 else ''}"] if hours else []
+    if mins or not hours:
+        parts.append(f"{mins} min{'s' if mins != 1 else ''}")
+    return " ".join(parts)
+
+
 def fetch(key):
+    # Daily summaries are up to date within minutes; the /stats endpoint is
+    # recalculated in the background and can lag by hours (days for new accounts).
     req = urllib.request.Request(API, headers={
         "Authorization": "Basic " + base64.b64encode(key.encode()).decode(),
         "User-Agent": "profile-wakatime-card",
     })
     with urllib.request.urlopen(req, timeout=30) as r:
-        data = json.load(r)["data"]
-    langs = sorted(data.get("languages") or [], key=lambda l: -l["total_seconds"])
+        days = json.load(r)["data"]
+    total = sum(d["grand_total"]["total_seconds"] for d in days)
+    langs, editors = {}, {}
+    for d in days:
+        for l in d.get("languages") or []:
+            langs[l["name"]] = langs.get(l["name"], 0) + l["total_seconds"]
+        for e in d.get("editors") or []:
+            editors[e["name"]] = editors.get(e["name"], 0) + e["total_seconds"]
+    top = sorted(((n, s) for n, s in langs.items() if s > 0), key=lambda x: -x[1])[:SHOWN]
+    active_days = sum(1 for d in days if d["grand_total"]["total_seconds"] > 0)
     return {
-        "total": data.get("human_readable_total") or "0 secs",
-        "seconds": data.get("total_seconds") or 0,
-        "daily": data.get("human_readable_daily_average") or "",
-        "editors": [e["name"] for e in (data.get("editors") or [])[:3]],
-        "languages": [{"name": l["name"], "percent": l["percent"], "text": l["text"]}
-                      for l in langs if l["total_seconds"] > 0][:SHOWN],
+        "total": human(total),
+        "seconds": total,
+        "daily": human(total / active_days) if active_days else "",
+        "editors": [n for n, _ in sorted(editors.items(), key=lambda x: -x[1])[:3]],
+        "languages": [{"name": n, "percent": 100 * s / total, "text": human(s)} for n, s in top],
     }
 
 
