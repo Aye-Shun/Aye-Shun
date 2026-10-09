@@ -6,9 +6,9 @@
 
 ```yaml
 name: Kenneth Park
-role: Full-Stack Software Developer @ Rutgers CUPR, Data Informatics Group
+most_recent_role: Full-Stack Software Developer @ Rutgers CUPR, Data Informatics Group
+current_role: Student @ Rutgers University
 education: B.A. Computer Science, minor in Data Science @ Rutgers (Jan 2027)
-building: FastAPI + PostgreSQL + React platform serving U.S. Census (ACS) data
 interests: [full-stack web apps, REST APIs, data pipelines, automated testing]
 ```
 
