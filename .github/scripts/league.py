@@ -39,6 +39,7 @@ SHOWN_GAMES = 24         # champion icons on the card (3 rows); the W/L count co
 PER_ROW = 8
 OUT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "league.svg"))
 README = os.path.join(os.path.dirname(OUT), "README.md")
+CARD_URL = f"https://raw.githubusercontent.com/{os.environ.get('GITHUB_REPOSITORY', 'Aye-Shun/Aye-Shun')}/main/league.svg"
 
 QUEUES = {420: ("ranked_solo_5x5", "Ranked Solo/Duo"), 440: ("ranked_flex_sr", "Ranked Flex")}
 DIVISIONS = {1: "I", 2: "II", 3: "III", 4: "IV"}
@@ -372,11 +373,13 @@ def render(s):
 
 
 def bust_readme_cache(svg):
-    """Point the README at league.svg?v=<hash of this card>.
+    """Point the README at the raw league.svg URL with ?v=<hash of this card>.
 
     GitHub's image servers and browsers cache league.svg for a few minutes,
     so a new card at the same address can show up late. A new address per
-    version makes viewers fetch the new card right away.
+    version makes viewers fetch the new card right away. It has to be the
+    full raw URL: GitHub turns a relative src into a redirect that drops
+    the query string.
     """
     try:
         with open(README) as f:
@@ -384,7 +387,7 @@ def bust_readme_cache(svg):
     except OSError:
         return
     version = hashlib.sha1(svg.encode()).hexdigest()[:8]
-    new = re.sub(r'src="league\.svg(\?v=[0-9a-f]+)?"', f'src="league.svg?v={version}"', text)
+    new = re.sub(r'src="[^"]*league\.svg(\?v=[0-9a-f]+)?"', f'src="{CARD_URL}?v={version}"', text)
     if new != text:
         with open(README, "w") as f:
             f.write(new)
