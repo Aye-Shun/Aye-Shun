@@ -2,7 +2,7 @@ name: Update League card
 
 on:
   schedule:
-    - cron: "41 */3 * * *" # every 3 hours
+    - cron: "41 * * * *" # every hour (a run with nothing new makes 3 tiny requests)
   workflow_dispatch:
     inputs:
       force:
