@@ -1,0 +1,44 @@
+name: Update contribution snake
+
+on:
+  schedule:
+    - cron: "23 6 * * *" # every day at 06:23 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/snake.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Draw the snake from the contribution graph
+        uses: Platane/snk@v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+
+      # The SVGs live on their own one-commit branch so main's history stays clean.
+      # snk runs in Docker, so dist/ is root-owned: copy it out before git touches it.
+      - name: Publish to the output branch
+        run: |
+          out="$RUNNER_TEMP/snake" && mkdir -p "$out" && cp dist/*.svg "$out" && cd "$out"
+          git init -q -b output
+          git add .
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Update contribution snake"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
