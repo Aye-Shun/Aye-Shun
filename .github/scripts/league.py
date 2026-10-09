@@ -62,15 +62,22 @@ def download(url):
         return r.read()
 
 
+class DeeplolDown(Exception):
+    """deeplol answered with errors or obviously incomplete data."""
+
+
 def deeplol(path, **params):
-    """GET one of deeplol's read-only endpoints, retrying a couple of times on network errors."""
+    """GET one of deeplol's read-only endpoints, retrying a couple of times on errors."""
     url = f"{DEEPLOL}{path}?{urllib.parse.urlencode(params)}"
     for attempt in range(3):
         try:
-            return json.loads(download(url))
-        except (urllib.error.URLError, TimeoutError):
+            data = json.loads(download(url))
+            if not isinstance(data, dict):
+                raise ValueError(f"expected a JSON object, got {type(data).__name__}")
+            return data
+        except (urllib.error.URLError, TimeoutError, ValueError) as e:
             if attempt == 2:
-                raise
+                raise DeeplolDown(f"{path}: {e}") from e
             time.sleep(5 * (attempt + 1))
 
 
@@ -153,16 +160,20 @@ def fetch():
     name, tag = RIOT_ID.rsplit("#", 1)
     platform = PLATFORM.upper()
     who = deeplol("/summoner/summoner", riot_id_name=name, riot_id_tag_line=tag, platform_id=platform)
-    who = who["summoner_basic_info_dict"]
+    who = who.get("summoner_basic_info_dict") or {}
     puuid = who.get("puu_id")
     if not puuid:
-        raise SystemExit(f"deeplol has no player {RIOT_ID} on {platform}")
+        raise DeeplolDown(f"no player {RIOT_ID} on {platform} (check the Riot ID, or deeplol is down)")
 
     queue_key, queue_name = QUEUES[QUEUE]
     entry = deeplol("/summoner/summoner-realtime", platform_id=platform, summoner_id="", puu_id=puuid)
+    if "season_tier_info_dict" not in entry:
+        raise DeeplolDown(f"no rank data: {str(entry)[:120]}")
     entry = entry["season_tier_info_dict"].get(queue_key) or {}
     tier = entry.get("tier") or None
     updated = deeplol("/summoner/updated-time", puu_id=puuid, platform_id=platform).get("updated_timestamp")
+    if not updated:
+        raise DeeplolDown("no last-updated time")
 
     # Matches only change when deeplol re-checks the player, so skip the
     # heavy match downloads if neither that nor the rank moved since last time.
@@ -171,6 +182,9 @@ def fetch():
         return None
 
     games = session_games(puuid, platform, champion_icons())
+    if not games and entry.get("wins", 0) + entry.get("losses", 0) > 0:
+        # ranked games on record but none in the match list: deeplol is mid-hiccup
+        raise DeeplolDown("empty match list for a player with ranked games")
     games.reverse()   # in the order they were played
     for i, g in enumerate(games):
         g["icon"] = g["icon"]() if g["icon"] and i >= len(games) - SHOWN_GAMES else None
@@ -351,7 +365,13 @@ def main():
         with open(args.from_json) as f:
             stats = json.load(f)
     else:
-        stats = fetch()
+        try:
+            stats = fetch()
+        except DeeplolDown as e:
+            # an outage shouldn't fail the run or replace a good card with an empty one;
+            # the card's "updated" date shows how old it is
+            print(f"::warning::deeplol is having problems ({e}); keeping the current league.svg")
+            return
         if stats is None:
             print("deeplol has nothing new since the last card; keeping league.svg")
             return
