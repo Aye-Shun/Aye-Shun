@@ -12,6 +12,10 @@ education: B.A. Computer Science, minor in Data Science @ Rutgers (Jan 2027)
 interests: [full-stack web apps, REST APIs, data pipelines, automated testing]
 ```
 
+### `$ ghfetch`
+
+<img src="stats.svg" alt="GitHub stats for Aye-Shun: contributions, commits, pull requests, issues, repos, stars, followers and streak (updates daily)">
+
 ### `$ ls ~/languages`
 
 <img src="languages.svg" alt="Java, Python, JavaScript, C, SQL, T-SQL, R, Assembly">
