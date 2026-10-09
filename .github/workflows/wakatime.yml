@@ -1,0 +1,44 @@
+name: Update WakaTime card
+
+on:
+  schedule:
+    - cron: "5 7 * * *" # every day at 07:05 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/wakatime.py
+      - .github/workflows/wakatime.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wakatime-card
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Build wakatime.svg
+        run: python3 .github/scripts/wakatime.py
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          CARD_OUT: ${{ runner.temp }}/card/wakatime.svg
+
+      # Like the snake, the card lives on its own one-commit branch so main's history stays clean
+      - name: Publish to the wakatime-card branch
+        run: |
+          cd "$RUNNER_TEMP/card" 2>/dev/null || { echo "No card built"; exit 0; }
+          git init -q -b wakatime-card
+          git add .
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Update WakaTime card"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" wakatime-card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
