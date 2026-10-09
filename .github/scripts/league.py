@@ -167,7 +167,7 @@ def fetch():
     # Matches only change when deeplol re-checks the player, so skip the
     # heavy match downloads if neither that nor the rank moved since last time.
     state = {"updated": updated, **{k: entry.get(k) for k in ("tier", "division", "league_points", "wins", "losses")}}
-    if previous_state() == state:
+    if previous_state() == state and os.environ.get("LEAGUE_FORCE") != "true":
         return None
 
     games = session_games(puuid, platform, champion_icons())

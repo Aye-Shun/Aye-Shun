@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "41 */3 * * *" # every 3 hours
   workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild the card even if deeplol has nothing new
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -37,6 +42,7 @@ jobs:
           RIOT_ID: "Ecionisakiri#9767"
           LOL_PLATFORM: na1
           LOL_TIMEZONE: America/New_York
+          LEAGUE_FORCE: ${{ inputs.force }}
 
       - name: Commit if the card changed
         run: |
