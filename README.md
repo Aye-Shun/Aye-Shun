@@ -29,6 +29,10 @@ interests: [full-stack web apps, REST APIs, data pipelines, automated testing]
 
 <sub>Stats from <a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767">deeplol.gg</a>. Not endorsed by Riot Games. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.</sub>
 
+### `$ spotify --recent`
+
+<a href="https://open.spotify.com/user/kennethpark14"><img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/spotify-card/spotify.svg" alt="The track I last played on Spotify and the four before it (updates hourly)"></a>
+
 ### `$ ls ~/languages`
 
 <img src="languages.svg" alt="Java, Python, JavaScript, C, SQL, T-SQL, R, Assembly">

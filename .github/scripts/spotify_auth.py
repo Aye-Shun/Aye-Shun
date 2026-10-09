@@ -18,6 +18,7 @@ import json
 import os
 import secrets
 import subprocess
+import urllib.error
 import urllib.parse
 import urllib.request
 import webbrowser
@@ -76,8 +77,22 @@ def main():
         data=urllib.parse.urlencode({"grant_type": "authorization_code", "code": code, "redirect_uri": REDIRECT}).encode(),
         headers={"Authorization": f"Basic {auth}", "Content-Type": "application/x-www-form-urlencoded"},
     )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        tokens = json.load(r)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            tokens = json.load(r)
+    except urllib.error.HTTPError as e:
+        # Spotify's error body says why (it never echoes the secret back)
+        try:
+            body = json.load(e)
+        except ValueError:
+            body = {}
+        error, detail = body.get("error", f"HTTP {e.code}"), body.get("error_description", "")
+        hint = {
+            "invalid_client": "The client secret doesn't match this client ID. On the app's Settings page, "
+                              "click 'View client secret' and copy it again.",
+            "invalid_grant": f"Check that the app's Redirect URIs include exactly {REDIRECT}, then run this again.",
+        }.get(error, "")
+        raise SystemExit(f"Spotify refused the login: {error} {detail}\n{hint}".rstrip())
     req = urllib.request.Request("https://api.spotify.com/v1/me", headers={"Authorization": f"Bearer {tokens['access_token']}"})
     with urllib.request.urlopen(req, timeout=30) as r:
         me = json.load(r)
