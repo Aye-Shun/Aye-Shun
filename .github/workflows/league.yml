@@ -1,0 +1,49 @@
+name: Update League card
+
+on:
+  schedule:
+    - cron: "41 */3 * * *" # every 3 hours
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/league.py
+      - .github/workflows/league.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: league-card
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Pillow
+        run: pip install pillow==12.3.0
+
+      - name: Build league.svg
+        run: python .github/scripts/league.py
+        env:
+          RIOT_ID: "Ecionisakiri#9767"
+          LOL_PLATFORM: na1
+          LOL_TIMEZONE: America/New_York
+
+      - name: Commit if the card changed
+        run: |
+          git add league.svg
+          git diff --cached --quiet && { echo "No changes"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update League card"
+          git pull --rebase -q
+          git push

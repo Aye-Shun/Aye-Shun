@@ -23,6 +23,12 @@ interests: [full-stack web apps, REST APIs, data pipelines, automated testing]
   <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" alt="A snake eating my GitHub contribution graph (updates daily)">
 </picture>
 
+### `$ league --stats`
+
+<a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767"><img src="league.svg" alt="My League of Legends rank, season win/loss and winrate, and my most recent ranked session (from deeplol.gg)"></a>
+
+<sub>Stats from <a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767">deeplol.gg</a>. Not endorsed by Riot Games. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.</sub>
+
 ### `$ ls ~/languages`
 
 <img src="languages.svg" alt="Java, Python, JavaScript, C, SQL, T-SQL, R, Assembly">
