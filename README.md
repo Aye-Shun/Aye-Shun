@@ -16,6 +16,13 @@ interests: [full-stack web apps, REST APIs, data pipelines, automated testing]
 
 <img src="stats.svg" alt="GitHub stats for Aye-Shun: contributions, commits, pull requests, issues, repos, stars, followers and streak (updates daily)">
 
+### `$ ./snake ~/contributions`
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
+  <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" alt="A snake eating my GitHub contribution graph (updates daily)">
+</picture>
+
 ### `$ ls ~/languages`
 
 <img src="languages.svg" alt="Java, Python, JavaScript, C, SQL, T-SQL, R, Assembly">
