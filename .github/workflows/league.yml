@@ -46,7 +46,7 @@ jobs:
 
       - name: Commit if the card changed
         run: |
-          git add league.svg
+          git add league.svg README.md
           git diff --cached --quiet && { echo "No changes"; exit 0; }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

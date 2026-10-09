@@ -14,6 +14,7 @@ Needs Pillow, to crop the rank emblem and shrink champion icons.
 
 import argparse
 import base64
+import hashlib
 import io
 import json
 import os
@@ -37,6 +38,7 @@ MATCH_LOOKBACK = 40      # most recent games (any queue) to look through for the
 SHOWN_GAMES = 24         # champion icons on the card (3 rows); the W/L count covers the whole session
 PER_ROW = 8
 OUT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "league.svg"))
+README = os.path.join(os.path.dirname(OUT), "README.md")
 
 QUEUES = {420: ("ranked_solo_5x5", "Ranked Solo/Duo"), 440: ("ranked_flex_sr", "Ranked Flex")}
 DIVISIONS = {1: "I", 2: "II", 3: "III", 4: "IV"}
@@ -369,6 +371,25 @@ def render(s):
     return "\n".join(out) + "\n"
 
 
+def bust_readme_cache(svg):
+    """Point the README at league.svg?v=<hash of this card>.
+
+    GitHub's image servers and browsers cache league.svg for a few minutes,
+    so a new card at the same address can show up late. A new address per
+    version makes viewers fetch the new card right away.
+    """
+    try:
+        with open(README) as f:
+            text = f.read()
+    except OSError:
+        return
+    version = hashlib.sha1(svg.encode()).hexdigest()[:8]
+    new = re.sub(r'src="league\.svg(\?v=[0-9a-f]+)?"', f'src="league.svg?v={version}"', text)
+    if new != text:
+        with open(README, "w") as f:
+            f.write(new)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--from-json", help="render data saved in this file instead of fetching it")
@@ -387,8 +408,10 @@ def main():
         if stats is None:
             print("deeplol has nothing new since the last card; keeping league.svg")
             return
+    svg = render(stats)
     with open(OUT, "w") as f:
-        f.write(render(stats))
+        f.write(svg)
+    bust_readme_cache(svg)
     print(f"wrote {OUT}")
 
 
