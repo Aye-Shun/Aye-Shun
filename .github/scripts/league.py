@@ -32,9 +32,10 @@ RIOT_ID = os.environ.get("RIOT_ID", "")             # "Name#TAG"
 PLATFORM = os.environ.get("LOL_PLATFORM", "na1").lower()
 QUEUE = int(os.environ.get("LOL_QUEUE", "420"))     # 420 = Ranked Solo/Duo, 440 = Ranked Flex
 TZ = ZoneInfo(os.environ.get("LOL_TIMEZONE", "America/New_York"))
-SESSION_GAP_MIN = 60     # a longer break than this between games ends a session
+SESSION_GAP_MIN = 120    # a longer break than this between games ends a session (matches deeplol)
 MATCH_LOOKBACK = 40      # most recent games (any queue) to look through for the latest session
-SHOWN_GAMES = 7          # champion icons on the card; the W/L count covers the whole session
+SHOWN_GAMES = 24         # champion icons on the card (3 rows); the W/L count covers the whole session
+PER_ROW = 8
 OUT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "league.svg"))
 
 QUEUES = {420: ("ranked_solo_5x5", "Ranked Solo/Duo"), 440: ("ranked_flex_sr", "Ranked Flex")}
@@ -146,6 +147,7 @@ def session_games(puuid, platform, champs):
                 "result": "remake" if info["is_remake"] else "win" if me["is_win"] else "loss",
                 "kda": f"{stats['kills']}/{stats['deaths']}/{stats['assists']}",
                 "start": int(start * 1000),
+                "duration": info["game_duration"],
                 "icon": icon,
             })
             newer_start = start
@@ -185,9 +187,8 @@ def fetch():
     if not games and entry.get("wins", 0) + entry.get("losses", 0) > 0:
         # ranked games on record but none in the match list: deeplol is mid-hiccup
         raise DeeplolDown("empty match list for a player with ranked games")
-    games.reverse()   # in the order they were played
-    for i, g in enumerate(games):
-        g["icon"] = g["icon"]() if g["icon"] and i >= len(games) - SHOWN_GAMES else None
+    for i, g in enumerate(games):   # newest first, like deeplol's list
+        g["icon"] = g["icon"]() if g["icon"] and i < SHOWN_GAMES else None
 
     return {
         "riot_id": f"{who['riot_id_name']}#{who['riot_id_tag_line']}",
@@ -233,9 +234,16 @@ def render(s):
     games = s["games"]
     wins = sum(g["result"] == "win" for g in games)
     losses = sum(g["result"] == "loss" for g in games)
-    if games:
-        day = datetime.fromtimestamp(games[-1]["start"] / 1000, TZ)
-        session_text = f"{day:%b} {day.day} · {len(games)} game{'s' if len(games) != 1 else ''}"
+    if games:   # newest first
+        first, last = (datetime.fromtimestamp(g["start"] / 1000, TZ) for g in (games[-1], games[0]))
+        if first.date() == last.date():
+            days = f"{last:%b} {last.day}"
+        elif first.month == last.month:
+            days = f"{first:%b} {first.day}–{last.day}"
+        else:
+            days = f"{first:%b} {first.day}–{last:%b} {last.day}"
+        played_min = sum(g.get("duration", 0) for g in games) // 60
+        session_when = days + (f" · {played_min // 60}h {played_min % 60}m" if played_min else "")
     name, tag = s["riot_id"].rsplit("#", 1)
     summary = (f"League of Legends, {s['riot_id']} ({server_name(s['platform'])}): {rank_text}, "
                f"{s['wins']} wins {s['losses']} losses this season ({winrate:.0%}), "
@@ -251,10 +259,13 @@ def render(s):
     emb_y = (header_y - 14 + top_bottom) / 2 - emb / 2
     sep_y = max(top_bottom, emb_y + emb) + 20
     sess_y = sep_y + 30
-    icon, gap = 44, 14
+    icon, row_h = 44, 76
+    step = (W - 2 * pad - icon) / (PER_ROW - 1)   # spread each row across the card
     icons_y = sess_y + 16
-    shown = games[-SHOWN_GAMES:]
-    prompt_y = (icons_y + icon + 46) if shown else (sess_y + 36)
+    shown = games[:SHOWN_GAMES]
+    rows = -(-len(shown) // PER_ROW)
+    more_y = icons_y + rows * row_h - 4
+    prompt_y = (more_y + (26 if len(games) > len(shown) else 0) + 22) if shown else (sess_y + 36)
     H = prompt_y + 22
     out = []
     t = 0.15
@@ -318,30 +329,31 @@ def render(s):
     out.append(f'<line x1="{pad}" y1="{sep_y}" x2="{W - pad}" y2="{sep_y}" stroke="{BORDER}" stroke-dasharray="4 4"/>')
     if games:
         record = f'<tspan class="g">{wins}W</tspan> <tspan class="l">{losses}L</tspan>'
-        remakes = len(games) - wins - losses
-        extra = f'<tspan class="m"> (+{remakes} remake{"s" if remakes != 1 else ""})</tspan>' if remakes else ""
+        count = f"{len(games)} game{'s' if len(games) != 1 else ''}"
         out.append(f'<text class="r" {tick()} x="{pad}" y="{sess_y}"><tspan class="k">Last session</tspan>: '
-                   f'{record}{extra}<tspan class="m"> · {escape(session_text)}</tspan></text>')
+                   f'{record}<tspan class="m"> · {count}</tspan></text>')
+        out.append(f'<text class="r t" {tick(0)} x="{W - pad}" y="{sess_y}" text-anchor="end">{escape(session_when)}</text>')
         for i, g in enumerate(shown):
-            x = pad + i * (icon + gap)
+            x = round(pad + (i % PER_ROW) * step, 1)
+            y = icons_y + (i // PER_ROW) * row_h
             ring = {"win": GREEN, "loss": RED}.get(g["result"], MUTED)
             letter = {"win": "W", "loss": "L"}.get(g["result"], "R")
-            body = (f'<clipPath id="ic{i}"><rect x="{x}" y="{icons_y}" width="{icon}" height="{icon}" rx="8"/></clipPath>'
-                    + (f'<image href="{g["icon"]}" x="{x}" y="{icons_y}" width="{icon}" height="{icon}" clip-path="url(#ic{i})"'
+            body = (f'<clipPath id="ic{i}"><rect x="{x}" y="{y}" width="{icon}" height="{icon}" rx="8"/></clipPath>'
+                    + (f'<image href="{g["icon"]}" x="{x}" y="{y}" width="{icon}" height="{icon}" clip-path="url(#ic{i})"'
                        + (' opacity=".45"' if g["result"] == "remake" else "") + "/>"
                        if g["icon"] else
-                       f'<rect x="{x}" y="{icons_y}" width="{icon}" height="{icon}" rx="8" fill="{BAR}"/>'
-                       f'<text class="s m" x="{x + icon / 2}" y="{icons_y + icon / 2 + 4}" text-anchor="middle">{escape(g["champion"][:3])}</text>')
-                    + f'<rect x="{x - 1}" y="{icons_y - 1}" width="{icon + 2}" height="{icon + 2}" rx="9" fill="none" stroke="{ring}" stroke-width="2"/>'
+                       f'<rect x="{x}" y="{y}" width="{icon}" height="{icon}" rx="8" fill="{BAR}"/>'
+                       f'<text class="s m" x="{x + icon / 2}" y="{y + icon / 2 + 4}" text-anchor="middle">{escape(g["champion"][:3])}</text>')
+                    + f'<rect x="{x - 1}" y="{y - 1}" width="{icon + 2}" height="{icon + 2}" rx="9" fill="none" stroke="{ring}" stroke-width="2"/>'
                     # W/L badge on the corner, so the result doesn't rely on colour alone
-                    + f'<rect x="{x + icon - 13}" y="{icons_y + icon - 13}" width="16" height="16" rx="4" fill="{ring}"/>'
-                    + f'<text class="s" x="{x + icon - 5}" y="{icons_y + icon - 1}" text-anchor="middle" fill="{BG}" '
+                    + f'<rect x="{x + icon - 13}" y="{y + icon - 13}" width="16" height="16" rx="4" fill="{ring}"/>'
+                    + f'<text class="s" x="{x + icon - 5}" y="{y + icon - 1}" text-anchor="middle" fill="{BG}" '
                       f'style="fill:{BG};font-weight:700">{letter}</text>'
-                    + f'<text class="s m" x="{x + icon / 2}" y="{icons_y + icon + 18}" text-anchor="middle">{g["kda"]}</text>')
-            out.append(f'<g class="p" {tick(0.08)}><title>{escape(g["champion"])}: {g["result"]} {g["kda"]}</title>{body}</g>')
+                    + f'<text class="s m" x="{x + icon / 2}" y="{y + icon + 18}" text-anchor="middle">{g["kda"]}</text>')
+            out.append(f'<g class="p" {tick(0.05)}><title>{escape(g["champion"])}: {g["result"]} {g["kda"]}</title>{body}</g>')
         if len(games) > len(shown):
-            out.append(f'<text class="r m s" {tick()} x="{pad + len(shown) * (icon + gap)}" y="{icons_y + icon / 2 + 4}">'
-                       f'+{len(games) - len(shown)} earlier</text>')
+            out.append(f'<text class="r m s" {tick()} x="{pad}" y="{more_y + 18}">'
+                       f'+{len(games) - len(shown)} earlier games not shown</text>')
     else:
         out.append(f'<text class="r" {tick()} x="{pad}" y="{sess_y}"><tspan class="k">Last session</tspan>: '
                    f'<tspan class="m">no {escape(s["queue"])} games found</tspan></text>')
