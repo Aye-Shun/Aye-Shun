@@ -9,16 +9,13 @@ GitHub activity
 
 <img src="stats.svg" width="100%" alt="GitHub activity for Aye-Shun, refreshed daily">
 
-<details>
-<summary><code>$ ./snake ~/contributions</code> — contribution animation</summary>
-<br>
+### `$ ./snake ~/contributions`
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
   <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" width="100%" alt="An animated snake tracing my GitHub contribution graph">
 </picture>
 
-</details>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/kennethpark14">LinkedIn</a> &nbsp;·&nbsp;
