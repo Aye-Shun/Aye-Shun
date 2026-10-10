@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="profile-header.svg" width="100%" alt="Kenneth Park — software developer, CS at Rutgers. Web apps, APIs, and data tools.">
+  <img src="terminal-animated.svg" width="100%" alt="Animated terminal: Kenneth Park, CS at Rutgers, full-stack developer.">
 </p>
 
 <p align="center">
@@ -20,14 +20,17 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 | **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** | Python | A CLI that reports missing values, duplicate records, and numeric ranges, with JSON output for scripts. |
 | **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** | JavaScript · Node.js | A local study log with calendar validation, weekly summaries, and tests using Node's built-in runner. |
 
-### `$ cat stack.yml`
+### `$ ls ~/stack`
 
-| Area | Technologies |
-| :-- | :-- |
-| Languages | Python · JavaScript · Java · SQL · C · R |
-| Web & APIs | React · FastAPI · Node.js · Vite |
-| Data | PostgreSQL · Pandas · NumPy · T-SQL |
-| Development | Git · Docker · pytest · Jupyter |
+<p>
+  <img src="languages.svg" alt="Animated terminal listing Java, Python, JavaScript, C, SQL, T-SQL, R, and Assembly">
+</p>
+<p>
+  <img src="frameworks.svg" alt="Animated terminal listing React, FastAPI, Vite, Node.js, npm, Pandas, NumPy, OpenCV, and Tkinter">
+</p>
+<p>
+  <img src="tools.svg" alt="Animated terminal listing Git, GitLab, Docker, PostgreSQL, pytest, VS Code, SSMS, and Jupyter">
+</p>
 
 <details>
 <summary><strong><code>$ ghfetch</code> — GitHub activity</strong></summary>
