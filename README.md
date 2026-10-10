@@ -25,7 +25,7 @@ interests: [full-stack web apps, REST APIs, data pipelines, automated testing]
 
 ### `$ league --stats`
 
-<a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767"><img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/main/league.svg?v=7739d496" alt="My League of Legends rank, season win/loss and winrate, and my most recent ranked session (from deeplol.gg)"></a>
+<a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767"><img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/main/league.svg?v=185ea259" alt="My League of Legends rank, season win/loss and winrate, and my most recent ranked session (from deeplol.gg)"></a>
 
 <sub>Stats from <a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767">deeplol.gg</a>. Not endorsed by Riot Games. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.</sub>
 
