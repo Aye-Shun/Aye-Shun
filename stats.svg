@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="390" viewBox="0 0 560 390" role="img" aria-label="GitHub stats for Aye-Shun: uptime 1 year, 4 months, contributions 41 (last year), commits 22 (last year), pull requests 1, issues 0, repos 3 public, stars 0, followers 1, streak 2 days (best 3)">
-<title>GitHub stats for Aye-Shun: uptime 1 year, 4 months, contributions 41 (last year), commits 22 (last year), pull requests 1, issues 0, repos 3 public, stars 0, followers 1, streak 2 days (best 3)</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="390" viewBox="0 0 560 390" role="img" aria-label="GitHub stats for Aye-Shun: uptime 1 year, 4 months, contributions 61 (last year), commits 36 (last year), pull requests 1, issues 0, repos 9 public, stars 0, followers 1, streak 3 days (best 3)">
+<title>GitHub stats for Aye-Shun: uptime 1 year, 4 months, contributions 61 (last year), commits 36 (last year), pull requests 1, issues 0, repos 9 public, stars 0, followers 1, streak 3 days (best 3)</title>
 <style>text{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace;font-size:14px;fill:#e6edf3}.k{fill:#58a6ff;font-weight:700}.m{fill:#8b949e}.g{fill:#3fb950;font-weight:700}.c{fill:#39c5cf}.t{font-size:12px;fill:#8b949e}.r{animation:in .45s cubic-bezier(.2,.8,.2,1) both}@keyframes in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}.cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{fill-opacity:0}}@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
 <defs><clipPath id="av"><rect x="24" y="119.0" width="160" height="160" rx="14"/></clipPath></defs>
 <rect x=".5" y=".5" width="559" height="389" rx="12" fill="#0d1117" stroke="#30363d"/>
@@ -13,14 +13,14 @@
 <text class="r" style="animation-delay:0.15s" x="216" y="78"><tspan class="g">Aye-Shun</tspan>@<tspan class="k">github</tspan></text>
 <text class="r m" style="animation-delay:0.15s" x="216" y="98">---------------</text>
 <text class="r" style="animation-delay:0.22s" x="216" y="124"><tspan class="k">Uptime</tspan>: 1 year, 4 months<tspan class="m"></tspan></text>
-<text class="r" style="animation-delay:0.29s" x="216" y="146"><tspan class="k">Contributions</tspan>: 41<tspan class="m"> (last year)</tspan></text>
-<text class="r" style="animation-delay:0.36s" x="216" y="168"><tspan class="k">Commits</tspan>: 22<tspan class="m"> (last year)</tspan></text>
+<text class="r" style="animation-delay:0.29s" x="216" y="146"><tspan class="k">Contributions</tspan>: 61<tspan class="m"> (last year)</tspan></text>
+<text class="r" style="animation-delay:0.36s" x="216" y="168"><tspan class="k">Commits</tspan>: 36<tspan class="m"> (last year)</tspan></text>
 <text class="r" style="animation-delay:0.43s" x="216" y="190"><tspan class="k">Pull requests</tspan>: 1<tspan class="m"></tspan></text>
 <text class="r" style="animation-delay:0.50s" x="216" y="212"><tspan class="k">Issues</tspan>: 0<tspan class="m"></tspan></text>
-<text class="r" style="animation-delay:0.57s" x="216" y="234"><tspan class="k">Repos</tspan>: 3<tspan class="m"> public</tspan></text>
+<text class="r" style="animation-delay:0.57s" x="216" y="234"><tspan class="k">Repos</tspan>: 9<tspan class="m"> public</tspan></text>
 <text class="r" style="animation-delay:0.64s" x="216" y="256"><tspan class="k">Stars</tspan>: 0<tspan class="m"></tspan></text>
 <text class="r" style="animation-delay:0.71s" x="216" y="278"><tspan class="k">Followers</tspan>: 1<tspan class="m"></tspan></text>
-<text class="r" style="animation-delay:0.78s" x="216" y="300"><tspan class="k">Streak</tspan>: 2 days<tspan class="m"> (best 3)</tspan></text>
+<text class="r" style="animation-delay:0.78s" x="216" y="300"><tspan class="k">Streak</tspan>: 3 days<tspan class="m"> (best 3)</tspan></text>
 <g class="r" style="animation-delay:0.85s"><rect x="216" y="318" width="26" height="16" fill="#484f58"/><rect x="242" y="318" width="26" height="16" fill="#ff7b72"/><rect x="268" y="318" width="26" height="16" fill="#3fb950"/><rect x="294" y="318" width="26" height="16" fill="#d29922"/><rect x="320" y="318" width="26" height="16" fill="#58a6ff"/><rect x="346" y="318" width="26" height="16" fill="#bc8cff"/><rect x="372" y="318" width="26" height="16" fill="#39c5cf"/><rect x="398" y="318" width="26" height="16" fill="#b1bac4"/></g>
 <text class="r" style="animation-delay:0.92s" x="24" y="368"><tspan class="g">→</tspan> <tspan class="c">~</tspan> <tspan class="cur">█</tspan></text>
 </svg>
