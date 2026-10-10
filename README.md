@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.svg" width="100%" alt="Kenneth Park — software developer, CS at Rutgers. Web apps, APIs, and data tools.">
+  <img src="profile-header.svg" width="100%" alt="Kenneth Park — software developer, CS at Rutgers. Web apps, APIs, and data tools.">
 </p>
 
 <p align="center">
