@@ -23,7 +23,7 @@
   <circle cx="69" cy="25" r="5" fill="#78e7c4" />
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
     <text x="971" y="31" text-anchor="end" font-size="14" fill="#98a8bc">kenneth@github:~</text>
-    <text x="38" y="92" font-size="18" fill="#78e7c4">$ whoami</text>
+    <text x="38" y="92" font-size="18" fill="#78e7c4">whoami</text>
     <text x="36" y="151" font-size="49" font-weight="700" letter-spacing="-2" fill="#f0f4fa">Kenneth Park<tspan font-size="23" letter-spacing="0" fill="#b8b4ff">  / Aye-Shun</tspan></text>
     <text x="38" y="194" font-size="22" fill="#bac7d9">Software developer · CS @ Rutgers</text>
     <text x="38" y="240" font-size="20" fill="#78e7c4">Web apps. APIs. Data tools.</text>

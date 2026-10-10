@@ -2,13 +2,11 @@
   <img src="terminal-animated.svg" width="100%" alt="Animated terminal: Kenneth Park, CS at Rutgers, full-stack developer.">
 </p>
 
-### `$ ghfetch`
-
-GitHub activity
+### GitHub activity
 
 <img src="stats.svg" width="100%" alt="GitHub activity for Aye-Shun, refreshed daily">
 
-### `$ ./snake ~/contributions`
+### Contribution activity
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
@@ -24,7 +22,7 @@ I'm Kenneth, a Computer Science student at Rutgers University with a minor in Da
 
 Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informatics Group. Expected graduation: **January 2027**.
 
-### `$ ls ~/projects`
+### Projects
 
 | Project | Stack | What you'll find |
 | :-- | :-- | :-- |
@@ -36,26 +34,26 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 | **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** | JavaScript · Node.js | A local study log with calendar validation, weekly summaries, and tests using Node's built-in runner. |
 | **[Word Frequency CLI](https://github.com/Aye-Shun/word-frequency-cli)** | Java | A UTF-8 word counter with Unicode support, deterministic rankings, and configurable result limits. |
 
-### `$ ls ~/languages`
+### Languages
 
 <p>
   <img src="languages.svg" alt="Animated terminal listing Java, Python, JavaScript, C, SQL, T-SQL, R, and Assembly">
 </p>
 
-### `$ ls ~/frameworks`
+### Frameworks & libraries
 
 <p>
   <img src="frameworks.svg" alt="Animated terminal listing React, FastAPI, Vite, Node.js, npm, Pandas, NumPy, OpenCV, and Tkinter">
 </p>
 
-### `$ ls ~/tools`
+### Tools
 
 <p>
   <img src="tools.svg" alt="Animated terminal listing Git, GitLab, Docker, PostgreSQL, pytest, VS Code, SSMS, and Jupyter">
 </p>
 
 <details>
-<summary><strong><code>$ cat off-duty.md</code> — games & music</strong></summary>
+<summary><strong>Games & music</strong></summary>
 <br>
 
 Outside of development, I play League of Legends and listen to music.
