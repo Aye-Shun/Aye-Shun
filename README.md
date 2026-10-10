@@ -6,7 +6,6 @@
 
 GitHub activity
 
-
 <img src="stats.svg" width="100%" alt="GitHub activity for Aye-Shun, refreshed daily">
 
 ### `$ ./snake ~/contributions`
@@ -15,7 +14,6 @@ GitHub activity
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
   <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" width="100%" alt="An animated snake tracing my GitHub contribution graph">
 </picture>
-
 
 <p align="center">
   <a href="https://www.linkedin.com/in/kennethpark14">LinkedIn</a> &nbsp;·&nbsp;
@@ -31,9 +29,12 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 | Project | Stack | What you'll find |
 | :-- | :-- | :-- |
 | **[Lanewise](https://github.com/Aye-Shun/lanewise)** | Swift · SwiftUI | A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. |
+| **[Focus Desk](https://github.com/Aye-Shun/focus-desk)** | React · Vite | A focus timer with breaks, pause/resume controls, a progress ring, and locally saved session counts. |
 | **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** | Python · FastAPI · SQLite | A persistent REST API with URL validation, tag filtering, pagination, and API tests. |
+| **[Expense Ledger](https://github.com/Aye-Shun/expense-ledger)** | Python · SQLite | A local expense CLI with exact-cent storage, category filters, and monthly totals. |
 | **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** | Python | A CLI that reports missing values, duplicate records, and numeric ranges, with JSON output for scripts. |
 | **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** | JavaScript · Node.js | A local study log with calendar validation, weekly summaries, and tests using Node's built-in runner. |
+| **[Word Frequency CLI](https://github.com/Aye-Shun/word-frequency-cli)** | Java | A UTF-8 word counter with Unicode support, deterministic rankings, and configurable result limits. |
 
 ### `$ ls ~/languages`
 
