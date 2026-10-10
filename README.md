@@ -20,14 +20,18 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 | **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** | Python | A CLI that reports missing values, duplicate records, and numeric ranges, with JSON output for scripts. |
 | **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** | JavaScript · Node.js | A local study log with calendar validation, weekly summaries, and tests using Node's built-in runner. |
 
-### `$ ls ~/stack`
+### `$ ls ~/languages`
 
 <p>
   <img src="languages.svg" alt="Animated terminal listing Java, Python, JavaScript, C, SQL, T-SQL, R, and Assembly">
 </p>
+### `$ ls ~/frameworks`
+
 <p>
   <img src="frameworks.svg" alt="Animated terminal listing React, FastAPI, Vite, Node.js, npm, Pandas, NumPy, OpenCV, and Tkinter">
 </p>
+### `$ ls ~/tools`
+
 <p>
   <img src="tools.svg" alt="Animated terminal listing Git, GitLab, Docker, PostgreSQL, pytest, VS Code, SSMS, and Jupyter">
 </p>
@@ -42,19 +46,6 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
   <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" width="100%" alt="An animated snake tracing my GitHub contribution graph">
 </picture>
-
-</details>
-
-<details>
-<summary><strong><code>$ ls ~/other-work</code> — more projects</strong></summary>
-<br>
-
-Additional work and experiments:
-
-- **Stock Market Sentiment Analyzer** — Python and SQL pipeline for collecting financial headlines, scoring sentiment, and comparing it with stock movement.
-- **Multithreaded Chat App** — Java socket-based client/server messaging with concurrent clients, authentication, and message logging.
-- **League of Legends Match Predictor** — Python project using Riot API match history to explore team composition and gold income.
-- **[Game Boy experiments](https://github.com/Aye-Shun/Tests)** — an early Python emulator skeleton with CPU flag helpers and an opcode-dispatch loop.
 
 </details>
 
