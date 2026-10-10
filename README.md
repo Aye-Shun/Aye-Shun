@@ -2,6 +2,24 @@
   <img src="terminal-animated.svg" width="100%" alt="Animated terminal: Kenneth Park, CS at Rutgers, full-stack developer.">
 </p>
 
+### `$ ghfetch`
+
+GitHub activity
+
+
+<img src="stats.svg" width="100%" alt="GitHub activity for Aye-Shun, refreshed daily">
+
+<details>
+<summary><code>$ ./snake ~/contributions</code> — contribution animation</summary>
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
+  <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" width="100%" alt="An animated snake tracing my GitHub contribution graph">
+</picture>
+
+</details>
+
 <p align="center">
   <a href="https://www.linkedin.com/in/kennethpark14">LinkedIn</a> &nbsp;·&nbsp;
   <a href="https://github.com/Aye-Shun?tab=repositories">Repositories</a>
@@ -35,19 +53,6 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 <p>
   <img src="tools.svg" alt="Animated terminal listing Git, GitLab, Docker, PostgreSQL, pytest, VS Code, SSMS, and Jupyter">
 </p>
-
-<details>
-<summary><strong><code>$ ghfetch</code> — GitHub activity</strong></summary>
-<br>
-
-<img src="stats.svg" width="100%" alt="GitHub activity for Aye-Shun, refreshed daily">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake-dark.svg">
-  <img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/output/snake.svg" width="100%" alt="An animated snake tracing my GitHub contribution graph">
-</picture>
-
-</details>
 
 <details>
 <summary><strong><code>$ cat off-duty.md</code> — games & music</strong></summary>
