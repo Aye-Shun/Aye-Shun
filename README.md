@@ -41,11 +41,13 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 <p>
   <img src="languages.svg" alt="Animated terminal listing Java, Python, JavaScript, C, SQL, T-SQL, R, and Assembly">
 </p>
+
 ### `$ ls ~/frameworks`
 
 <p>
   <img src="frameworks.svg" alt="Animated terminal listing React, FastAPI, Vite, Node.js, npm, Pandas, NumPy, OpenCV, and Tkinter">
 </p>
+
 ### `$ ls ~/tools`
 
 <p>
