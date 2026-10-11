@@ -30,9 +30,9 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 - **[Focus Desk](https://github.com/Aye-Shun/focus-desk)** — A React timer with focus sessions, breaks, and a saved session count.
 - **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** — Save and tag bookmarks with FastAPI and SQLite.
 - **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** — Check a CSV for missing cells, duplicate rows, and uneven columns. Python.
-- **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** — Log study time and see weekly totals by subject. Node.js.
+- **[Grade Goal](https://github.com/Aye-Shun/grade-goal)** — Calculate weighted grades and the average needed on remaining work. Python.
 
-[All repositories](https://github.com/Aye-Shun?tab=repositories), including Expense Ledger and Word Frequency CLI.
+[All repositories](https://github.com/Aye-Shun?tab=repositories), including Study Session CLI, Expense Ledger, and Word Frequency CLI.
 
 ### Languages
 
