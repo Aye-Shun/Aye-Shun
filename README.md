@@ -52,9 +52,7 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
   <img src="tools.svg" alt="Animated terminal listing Git, GitLab, Docker, PostgreSQL, pytest, VS Code, SSMS, and Jupyter">
 </p>
 
-<details>
-<summary><strong>Games & music</strong></summary>
-<br>
+### Games & music
 
 Outside of development, I play League of Legends and listen to music.
 
@@ -63,5 +61,3 @@ Outside of development, I play League of Legends and listen to music.
 <sub>Stats from <a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767">deeplol.gg</a>. Not endorsed by Riot Games. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.</sub>
 
 <a href="https://open.spotify.com/user/kennethpark14"><img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/spotify-card/spotify.svg" width="100%" alt="My five most recently played Spotify tracks"></a>
-
-</details>
