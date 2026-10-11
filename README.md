@@ -14,25 +14,25 @@
 </picture>
 
 <p align="center">
+  <a href="https://aye-shun.github.io/kenneth-park-portfolio/">Website & resume</a> &nbsp;·&nbsp;
   <a href="https://www.linkedin.com/in/kennethpark14">LinkedIn</a> &nbsp;·&nbsp;
   <a href="https://github.com/Aye-Shun?tab=repositories">Repositories</a>
 </p>
 
-I'm Kenneth, a Computer Science student at Rutgers University with a minor in Data Science. I build web apps, APIs, and data tools, with an interest in clear interfaces and automated testing.
+I'm Kenneth, a Computer Science student at Rutgers with a Data Science minor. This is where I keep my small web apps, command-line tools, and other projects.
 
 Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informatics Group. Expected graduation: **January 2027**.
 
-### Projects
+### Selected projects
 
-| Project | Stack | What you'll find |
-| :-- | :-- | :-- |
-| **[Lanewise](https://github.com/Aye-Shun/lanewise)** | Swift · SwiftUI | A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. |
-| **[Focus Desk](https://github.com/Aye-Shun/focus-desk)** | React · Vite | A focus timer with breaks, pause/resume controls, a progress ring, and locally saved session counts. |
-| **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** | Python · FastAPI · SQLite | A persistent REST API with URL validation, tag filtering, pagination, and API tests. |
-| **[Expense Ledger](https://github.com/Aye-Shun/expense-ledger)** | Python · SQLite | A local expense CLI with exact-cent storage, category filters, and monthly totals. |
-| **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** | Python | A CLI that reports missing values, duplicate records, and numeric ranges, with JSON output for scripts. |
-| **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** | JavaScript · Node.js | A local study log with calendar validation, weekly summaries, and tests using Node's built-in runner. |
-| **[Word Frequency CLI](https://github.com/Aye-Shun/word-frequency-cli)** | Java | A UTF-8 word counter with Unicode support, deterministic rankings, and configurable result limits. |
+- **[Portfolio & resume](https://github.com/Aye-Shun/kenneth-park-portfolio)** — My website, built with HTML, CSS, and a little JavaScript. [Open the site](https://aye-shun.github.io/kenneth-park-portfolio/).
+- **[Lanewise](https://github.com/Aye-Shun/lanewise)** — A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. Swift / SwiftUI.
+- **[Focus Desk](https://github.com/Aye-Shun/focus-desk)** — A React timer with focus sessions, breaks, and a saved session count.
+- **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** — Save and tag bookmarks with FastAPI and SQLite.
+- **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** — Check a CSV for missing cells, duplicate rows, and uneven columns. Python.
+- **[Study Session CLI](https://github.com/Aye-Shun/study-session-cli)** — Log study time and see weekly totals by subject. Node.js.
+
+[All repositories](https://github.com/Aye-Shun?tab=repositories), including Expense Ledger and Word Frequency CLI.
 
 ### Languages
 
