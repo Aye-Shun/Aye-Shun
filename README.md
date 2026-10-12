@@ -29,10 +29,10 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 - **[Lanewise](https://github.com/Aye-Shun/lanewise)** — A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. Swift / SwiftUI.
 - **[Focus Desk](https://github.com/Aye-Shun/focus-desk)** — A React timer with focus sessions, breaks, and a saved session count.
 - **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** — Save and tag bookmarks with FastAPI and SQLite.
-- **[CSV Quality Check](https://github.com/Aye-Shun/csv-quality-check)** — Check a CSV for missing cells, duplicate rows, and uneven columns. Python.
 - **[Grade Goal](https://github.com/Aye-Shun/grade-goal)** — Calculate weighted grades and the average needed on remaining work. Python.
+- **[Habit Grid](https://github.com/Aye-Shun/habit-grid)** — Track habits in a seven-day checklist saved in the browser. React / Vite.
 
-[All repositories](https://github.com/Aye-Shun?tab=repositories), including Study Session CLI, Expense Ledger, and Word Frequency CLI.
+[All repositories](https://github.com/Aye-Shun?tab=repositories), including CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
 
 ### Languages
 
