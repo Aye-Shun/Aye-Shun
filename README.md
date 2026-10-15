@@ -31,6 +31,7 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 - **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** — Save and tag bookmarks with FastAPI and SQLite.
 - **[Grade Goal](https://github.com/Aye-Shun/grade-goal)** — Calculate weighted grades and the average needed on remaining work. Python.
 - **[Habit Grid](https://github.com/Aye-Shun/habit-grid)** — Track habits in a seven-day checklist saved in the browser. React / Vite.
+- **[SQL Practice Lab](https://github.com/Aye-Shun/sql-practice-lab)** — Ten SQLite exercises on joins, grouping, subqueries, dates, and ranking, with sample data and reference queries.
 
 [All repositories](https://github.com/Aye-Shun?tab=repositories), including CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
 
