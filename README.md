@@ -28,12 +28,12 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 - **[Portfolio & resume](https://github.com/Aye-Shun/kenneth-park-portfolio)** — My website, built with HTML, CSS, and a little JavaScript. [Open the site](https://aye-shun.github.io/kenneth-park-portfolio/).
 - **[Lanewise](https://github.com/Aye-Shun/lanewise)** — A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. Swift / SwiftUI.
 - **[Focus Desk](https://github.com/Aye-Shun/focus-desk)** — A React timer with focus sessions, breaks, and a saved session count.
-- **[Bookmark API](https://github.com/Aye-Shun/bookmark-api)** — Save and tag bookmarks with FastAPI and SQLite.
 - **[Grade Goal](https://github.com/Aye-Shun/grade-goal)** — Calculate weighted grades and the average needed on remaining work. Python.
 - **[Habit Grid](https://github.com/Aye-Shun/habit-grid)** — Track habits in a seven-day checklist saved in the browser. React / Vite.
 - **[SQL Practice Lab](https://github.com/Aye-Shun/sql-practice-lab)** — Ten SQLite exercises on joins, grouping, subqueries, dates, and ranking, with sample data and reference queries.
+- **[Java Flashcards](https://github.com/Aye-Shun/java-flashcards)** — Quiz from a text deck, shuffle cards, and review missed answers in the terminal. Java.
 
-[All repositories](https://github.com/Aye-Shun?tab=repositories), including CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
+[All repositories](https://github.com/Aye-Shun?tab=repositories), including [Bookmark API](https://github.com/Aye-Shun/bookmark-api), CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
 
 ### Languages
 
