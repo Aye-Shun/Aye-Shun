@@ -57,7 +57,7 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 
 Outside of development, I play League of Legends and listen to music.
 
-<a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767"><img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/main/league.svg?v=6e82c1bd" width="100%" alt="My League of Legends rank and recent ranked session"></a>
+<a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767"><img src="https://raw.githubusercontent.com/Aye-Shun/Aye-Shun/main/league.svg?v=3bc087ff" width="100%" alt="My League of Legends rank and recent ranked session"></a>
 
 <sub>Stats from <a href="https://www.deeplol.gg/summoner/na/Ecionisakiri-9767">deeplol.gg</a>. Not endorsed by Riot Games. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.</sub>
 
