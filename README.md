@@ -27,13 +27,13 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 
 - **[Portfolio & resume](https://github.com/Aye-Shun/kenneth-park-portfolio)** — My website, built with HTML, CSS, and a little JavaScript. [Open the site](https://aye-shun.github.io/kenneth-park-portfolio/).
 - **[Lanewise](https://github.com/Aye-Shun/lanewise)** — A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. Swift / SwiftUI.
-- **[SQL Practice Lab](https://github.com/Aye-Shun/sql-practice-lab)** — Ten SQLite exercises on joins, grouping, subqueries, dates, and ranking, with sample data and reference queries.
 - **[Java Flashcards](https://github.com/Aye-Shun/java-flashcards)** — Quiz from a text deck, shuffle cards, and review missed answers in the terminal. Java.
 - **[File Duplicates](https://github.com/Aye-Shun/file-duplicates)** — Find matching files with SHA-256 and print a report without deleting anything. Python.
 - **[Kanban Local](https://github.com/Aye-Shun/kanban-local)** — Move cards across a task board, save it in the browser, and import or export JSON. React / Vite.
 - **[Pathfinder Lab](https://github.com/Aye-Shun/pathfinder-lab)** — Paint walls and weighted terrain, then compare BFS and Dijkstra routes on a grid. JavaScript.
+- **[HTTP Log Summary](https://github.com/Aye-Shun/http-log-summary)** — Summarize HTTP status groups, response bytes, and request times from a small TSV log. C.
 
-[All repositories](https://github.com/Aye-Shun?tab=repositories), including [Habit Grid](https://github.com/Aye-Shun/habit-grid), [Focus Desk](https://github.com/Aye-Shun/focus-desk), [Grade Goal](https://github.com/Aye-Shun/grade-goal), [Bookmark API](https://github.com/Aye-Shun/bookmark-api), CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
+[All repositories](https://github.com/Aye-Shun?tab=repositories), including [SQL Practice Lab](https://github.com/Aye-Shun/sql-practice-lab), [Habit Grid](https://github.com/Aye-Shun/habit-grid), [Focus Desk](https://github.com/Aye-Shun/focus-desk), [Grade Goal](https://github.com/Aye-Shun/grade-goal), [Bookmark API](https://github.com/Aye-Shun/bookmark-api), CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
 
 ### Languages
 
