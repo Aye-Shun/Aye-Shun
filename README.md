@@ -27,13 +27,13 @@ Previously a **Full-Stack Software Developer** with Rutgers CUPR's Data Informat
 
 - **[Portfolio & resume](https://github.com/Aye-Shun/kenneth-park-portfolio)** — My website, built with HTML, CSS, and a little JavaScript. [Open the site](https://aye-shun.github.io/kenneth-park-portfolio/).
 - **[Lanewise](https://github.com/Aye-Shun/lanewise)** — A native macOS League of Legends companion with lobby scouting, match history, and an in-game overlay. Swift / SwiftUI.
-- **[Room Reservations](https://github.com/Aye-Shun/room-reservations)** — Book rooms in a local SQLite database, reject overlapping times, and keep canceled reservations. Python / SQL.
 - **[Bit Inspector](https://github.com/Aye-Shun/bit-inspector)** — View fixed-width binary and hexadecimal representations, with signed and unsigned integer values. Java.
 - **[JSON Compare](https://github.com/Aye-Shun/json-compare)** — Compare JSON documents and list changed paths, ignoring object key order and comparing arrays by index. React / JavaScript.
 - **[Line Ending Check](https://github.com/Aye-Shun/line-ending-check)** — Count LF, CRLF, and lone CR line endings to spot mixed files. C.
 - **[Recipe Scale](https://github.com/Aye-Shun/recipe-scale)** — Scale ingredient quantities for a different number of servings using exact fractions. Python.
+- **[ISBN Check](https://github.com/Aye-Shun/isbn-check)** — Check ISBN-10 and ISBN-13 numbers and convert valid ISBN-10 input to ISBN-13. Java.
 
-[All repositories](https://github.com/Aye-Shun?tab=repositories), including [HTTP Log Summary](https://github.com/Aye-Shun/http-log-summary), [Pathfinder Lab](https://github.com/Aye-Shun/pathfinder-lab), [Kanban Local](https://github.com/Aye-Shun/kanban-local), [File Duplicates](https://github.com/Aye-Shun/file-duplicates), [Java Flashcards](https://github.com/Aye-Shun/java-flashcards), [SQL Practice Lab](https://github.com/Aye-Shun/sql-practice-lab), [Habit Grid](https://github.com/Aye-Shun/habit-grid), [Focus Desk](https://github.com/Aye-Shun/focus-desk), [Grade Goal](https://github.com/Aye-Shun/grade-goal), [Bookmark API](https://github.com/Aye-Shun/bookmark-api), CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
+[All repositories](https://github.com/Aye-Shun?tab=repositories), including [Room Reservations](https://github.com/Aye-Shun/room-reservations), [HTTP Log Summary](https://github.com/Aye-Shun/http-log-summary), [Pathfinder Lab](https://github.com/Aye-Shun/pathfinder-lab), [Kanban Local](https://github.com/Aye-Shun/kanban-local), [File Duplicates](https://github.com/Aye-Shun/file-duplicates), [Java Flashcards](https://github.com/Aye-Shun/java-flashcards), [SQL Practice Lab](https://github.com/Aye-Shun/sql-practice-lab), [Habit Grid](https://github.com/Aye-Shun/habit-grid), [Focus Desk](https://github.com/Aye-Shun/focus-desk), [Grade Goal](https://github.com/Aye-Shun/grade-goal), [Bookmark API](https://github.com/Aye-Shun/bookmark-api), CSV Quality Check, Study Session CLI, Expense Ledger, and Word Frequency CLI.
 
 ### Languages
 
